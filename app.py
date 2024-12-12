@@ -11,7 +11,7 @@ import random
 import glob
 
 # Default values
-default_prompt = "a fast car"
+default_prompt = ""
 default_image_path = "input.png"
 default_num_videos = 1
 default_num_inference_steps = 50
@@ -19,8 +19,8 @@ default_num_frames = 81
 default_guidance_scale = 6
 default_fps = 16
 default_seed = 42
-default_width = 720
-default_height = 720
+default_width = 768
+default_height = 768
 
 # Initialize the model and pipeline globally
 pipe = None
@@ -202,15 +202,15 @@ with gr.Blocks(title="CogVideoX Text-to-Video Generation") as demo:
                     width = gr.Slider(
                         label="Width",
                         minimum=256,
-                        maximum=1024,
-                        step=64,
+                        maximum=1536,
+                        step=16,
                         value=default_width,
                     )
                     height = gr.Slider(
                         label="Height",
                         minimum=256,
-                        maximum=1024,
-                        step=64,
+                        maximum=1536,
+                        step=16,
                         value=default_height,
                     )
                 guidance_scale = gr.Slider(
