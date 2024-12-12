@@ -9,3 +9,5 @@ logs/
 output*
 test*
 venv
+.gradio
+.vs
